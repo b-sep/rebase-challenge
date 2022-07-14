@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  host: postgres
+  username: 'rebase'
+  password: 'rebase'
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: exam_development
+
+test:
+  <<: *default
+  database: exam_test
