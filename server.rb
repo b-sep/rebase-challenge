@@ -4,7 +4,7 @@ require 'sinatra'
 require 'rack/handler/puma'
 require 'csv'
 require 'sinatra/activerecord'
-require_relative 'models/exam.rb'
+require_relative 'models/exam'
 
 get '/tests' do
   Exam.all.to_json
