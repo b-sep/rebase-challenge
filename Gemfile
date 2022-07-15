@@ -2,12 +2,16 @@
 
 source 'https://rubygems.org'
 
-gem 'debug'
 gem 'pg'
 gem 'puma'
 gem 'rack'
 gem 'rake'
-gem 'rspec'
 gem 'sinatra'
 gem 'sinatra-activerecord'
-gem 'rack-test'
+
+group :test do
+  gem 'rspec'
+  gem 'database_cleaner-active_record'
+  gem 'debug'
+  gem 'rack-test'
+end
