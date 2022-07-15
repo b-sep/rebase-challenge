@@ -1,7 +1,12 @@
 ENV["RACK_ENV"] = "test"
+require_relative '../server'
 require 'rubygems'
 require 'bundler'
 Bundler.require(:default, :test)
+
+def app
+  Sinatra::Application
+end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods

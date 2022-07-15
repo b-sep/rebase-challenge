@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'popula o banco de dados' do
-  it 'com sucesso' do
+describe 'populate database' do
+  it 'successfully' do
     csv_file = [{
                   cpf: '048.973.170-88',
                   nome_paciente: 'Emilly Batista Neto',
