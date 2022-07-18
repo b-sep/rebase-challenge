@@ -1,8 +1,8 @@
 ENV["RACK_ENV"] = "test"
-require_relative '../server'
+require_relative '../lib/server'
 require 'rubygems'
 require 'bundler'
-Bundler.require(:default, :test)
+Bundler.require(:default)
 
 def app
   Sinatra::Application

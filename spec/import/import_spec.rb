@@ -1,5 +1,5 @@
 require 'spec_helper'
-require_relative '../import'
+require_relative '../../lib/import'
 
 describe 'Import' do
   it '#parse_file' do
@@ -9,6 +9,7 @@ describe 'Import' do
 
     expect(parsed_file.class).to eq CSV::Table
     expect(parsed_file.map {|row| row[:cpf]}.size).to eq 2
+    expect(parsed_file.map {|row| row[:patient_name]}.size).to eq 2
   end
 
   it '#from_csv' do

@@ -12,6 +12,23 @@ docker container run \
   postgres:14.4 \
 
 docker container run \
+  --rm \
+  --name redis \
+  -d \
+  --network rbchallenge \
+  redis:7.0.3 \
+
+docker container run \
+  --name sidekiq \
+  --rm \
+  -d \
+  -v $(pwd):/app \
+  -w /app \
+  --network rbchallenge \
+  ruby:3.1.2 \
+  bash -c "bundle install && sidekiq -r './worker/worker.rb' " \
+
+docker container run \
   -ti\
   --rm \
   --name app \
@@ -20,4 +37,4 @@ docker container run \
   -v $(pwd):/app \
   -p 3000:3000 \
   ruby:3.1.2 \
-  bash -c "bundle install && rake db:drop && rake db:create && rake db:migrate && rake db:test:prepare && rake db:populate && ruby server.rb"
+  bash -c "bundle install && rake db:drop && rake db:create && rake db:migrate && rake db:test:prepare && rake db:populate && ruby './lib/server.rb' " \

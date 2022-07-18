@@ -8,10 +8,9 @@ gem 'rack'
 gem 'rake'
 gem 'sinatra'
 gem 'sinatra-activerecord'
-
-group :test do
-  gem 'rspec'
-  gem 'database_cleaner-active_record'
-  gem 'debug'
-  gem 'rack-test'
-end
+gem 'redis'
+gem 'sidekiq'
+gem 'rspec'
+gem 'database_cleaner-active_record'
+gem 'debug'
+gem 'rack-test'

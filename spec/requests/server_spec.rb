@@ -17,7 +17,7 @@ describe 'HTTP verbs' do
       expect(last_response.status).to eq 200
     end
 
-    it 'return a empty json if database is empty' do
+    it 'return a message if database is empty' do
 
       get '/tests'
 
@@ -26,18 +26,13 @@ describe 'HTTP verbs' do
   end
 
   context 'POST /import' do
-    it 'persist into database from csv' do
+    it 'receive a file to save in database' do
       file = File.open('spec/support/data_test.csv')
 
       post '/import', file
-      
-      expect(last_response.status).to eq 202
-      expect(last_response.body).to include 'Arquivo importado com sucesso ;)'
-      expect(Exam.all.size).to eq 2
-      expect(Exam.first.cpf).to eq '089.445.170-88'
-      expect(Exam.first.patient_name).to eq 'Emilly Batista Neto'
-      expect(Exam.last.cpf).to eq '048.973.170-88'
-      expect(Exam.last.patient_name).to eq 'Emilly Segunda Neto'
+  
+      expect(last_response.status).to eq 200
+      expect(last_response.body).to include 'Arquivo recebido com sucesso ;)'
     end
   end
 end
