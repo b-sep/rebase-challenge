@@ -29,6 +29,17 @@ docker container run \
   bash -c "bundle install && sidekiq -r './worker/worker.rb' " \
 
 docker container run \
+  --name sidekiq-panel \
+  --rm \
+  -d \
+  -v $(pwd):/app \
+  -w /app \
+  --network rbchallenge \
+  -p 5000:5000 \
+  ruby:3.1.2 \
+  bash -c "bundle install && bundle exec rackup -o 0.0.0.0 -p 5000 " \
+
+docker container run \
   -ti\
   --rm \
   --name app \
