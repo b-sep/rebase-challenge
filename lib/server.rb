@@ -16,9 +16,11 @@ class ApiExam < Sinatra::Base
     begin
       data = request.body.read.force_encoding('utf-8')
       Worker.perform_async(data)
-      halt 200, 'Arquivo recebido com sucesso ;)'.to_json
+      status 200
+      body 'Arquivo recebido com sucesso ;)'.to_json
     rescue
-      halt 500, 'Algo aconteceu :('.to_json
+      status 500
+      body 'Algo aconteceu :('.to_json
     end
   end
   

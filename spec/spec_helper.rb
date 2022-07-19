@@ -2,7 +2,7 @@ ENV["RACK_ENV"] = "test"
 require_relative '../lib/server'
 require 'rubygems'
 require 'bundler'
-Bundler.require(:default)
+Bundler.require(:test)
 
 def app
   ApiExam

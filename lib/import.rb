@@ -7,7 +7,7 @@ class Import
 
   class << self
     def parse_file(file)
-      csv_parse = CSV.parse(file, col_sep: ';', headers: true, header_converters: :symbol)
+      CSV.parse(file, col_sep: ';', headers: true, header_converters: :symbol)
     end
 
     def from_csv(file)
