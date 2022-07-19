@@ -5,7 +5,7 @@ require 'bundler'
 Bundler.require(:default)
 
 def app
-  Sinatra::Application
+  ApiExam
 end
 
 RSpec.configure do |config|

@@ -23,6 +23,7 @@ docker container run \
   --rm \
   -d \
   -v $(pwd):/app \
+  -v gems:/usr/local/bundle \
   -w /app \
   --network rbchallenge \
   ruby:3.1.2 \
@@ -33,11 +34,12 @@ docker container run \
   --rm \
   -d \
   -v $(pwd):/app \
+  -v gems:/usr/local/bundle \
   -w /app \
   --network rbchallenge \
   -p 5000:5000 \
   ruby:3.1.2 \
-  bash -c "bundle install && bundle exec rackup -o 0.0.0.0 -p 5000 " \
+  bash -c "bundle install && bundle exec rackup -p 5000 -o 0.0.0.0 " \
 
 docker container run \
   -ti\
@@ -46,6 +48,7 @@ docker container run \
   --network rbchallenge \
   -w /app \
   -v $(pwd):/app \
+  -v gems:/usr/local/bundle \
   -p 3000:3000 \
   ruby:3.1.2 \
   bash -c "bundle install && rake db:drop && rake db:create && rake db:migrate && rake db:test:prepare && ruby './lib/server.rb' " \

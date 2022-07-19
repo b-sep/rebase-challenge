@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'HTTP verbs' do
+describe 'ApiExam' do
   context 'GET /tests' do
     it 'return all exams' do
       Exam.create!(cpf: '048.973.170-88', patient_name: 'Emilly Batista Neto', patient_email: 'gerald.crona@ebert-quigley.com', patient_birth_date: '2001-03-11', patient_address: '165 Rua Rafaela', patient_city: 'Ituverava', patient_state: 'Alagoas', doctor_registration: 'B000BJ20J4', doctor_registration_state: 'PI', doctor_name: 'Maria Luiza Pires', doctor_email: 'denna@wisozk.biz', token_exam_result: 'IQCZ17', exam_date: '2021-08-05', exam_type: 'hemácias', exam_limit: '45-52', exam_result: '97')
