@@ -57,6 +57,11 @@ Se tiverem exames cadastrados:
 
 ## Importa arquivo CSV para o banco de dados
 
+<strong>O arquivo CSV deve obrigatoriamente ter o seguinte cabeçalho:
+  cpf, nome paciente, email paciente, data nascimento paciente, endereço/rua paciente, cidade paciente, estado patiente, crm médico, crm médico estado,       nome médico, email médico, token resultado exame, data exame, tipo exame, limites tipo exame, resultado tipo exame
+</strong>  
+  
+
 ![POST](https://img.shields.io/badge/-POST-blue) `http://localhost/import`
 
 #### Resposta de sucesso:
