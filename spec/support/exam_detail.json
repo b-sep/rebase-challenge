@@ -1,0 +1,25 @@
+{
+  "result_token": "IQCZ17",
+  "result_date": "2021-08-05",
+  "cpf": "048.973.170-88",
+  "name": "Emilly Batista Neto",
+  "email": "gerald.crona@ebert-quigley.com",
+  "birthday": "2001-03-11",
+  "doctor": {
+    "crm": "B000BJ20J4", 
+    "crm_state": "PI", 
+    "name": "Maria Luiza Pires"
+  },
+  "tests": [
+    {
+      "test_type": "ácido úrico",
+      "test_limits": "15-61", 
+      "result": "43"
+    }, 
+    {
+      "test_type": "hemácias", 
+      "test_limits": "45-52", 
+      "result": "97"
+    }
+  ]
+}

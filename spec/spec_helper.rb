@@ -1,6 +1,7 @@
 ENV["RACK_ENV"] = "test"
 require_relative '../lib/server'
 require "sidekiq/testing"
+Sidekiq::Testing.inline!
 require 'rubygems'
 require 'bundler'
 Bundler.require(:test)
