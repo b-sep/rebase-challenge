@@ -32,12 +32,6 @@ Para rodar os testes da aplicação, rode:
 $ docker exec -ti app bash -c rspec
 ```
 
-Para visualizar todos os exames cadastrados, visite:
-
-```bash
-http://localhost:3000/tests
-```
-
 Para visualizar o painel de jobs do sidekiq, visite:
 
 ```bash
