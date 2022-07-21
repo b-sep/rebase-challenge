@@ -15,9 +15,10 @@ class ApiExam < Sinatra::Base
   end
 
   post '/import' do
-    return 400, 'Por favor envie um arquivo'.to_json if params.empty?
     begin
       data = request.body.read.force_encoding('utf-8')
+      return 400, 'Por favor envie um arquivo'.to_json if data.empty?
+    
       Worker.perform_async(data)
       status 200
       body 'Arquivo recebido com sucesso ;)'.to_json
